@@ -9,14 +9,14 @@ def notify(subject, body, color) {
         message += " | ${body}"
     }
 
-    slackSend message: message, color: color, channel: '#remediations'
+    slackSend message: message, color: color, channel: '#compliance-alarms'
 }
 
 def notifyOnFailure(Closure step) {
     try {
         step()
     } catch (e) {
-        notify("@Alec Cohan [${env.JOB_NAME.split('/')[-1]}] Build failed", "See ${env.BUILD_URL}console", "danger")
+        notify("[${env.JOB_NAME.split('/')[-1]}] Build failed", "See ${env.BUILD_URL}console", "danger")
         throw e
     }
 }
@@ -41,16 +41,6 @@ node ('openscap') {
         notify("[${env.JOB_NAME.split('/')[-1]}] Building ${REVISION}", null, "#439FE0")
 
         stage('checkout scm') {
-            /*
-            checkout poll:false, scm: [
-                $class: 'GitSCM',
-                branches: [[name: "ssg-2.0"]],
-                userRemoteConfigs: [[
-                    url: 'git@github.com:RedHatInsights/insights-remediations',
-                    credentialsId: 'insightsdroid-ssh-git'
-                ]]
-            ]
-            */
             checkout scm
         }
 
@@ -58,10 +48,6 @@ node ('openscap') {
             sh 'mkdir content'
             sh 'curl -s -L "https://github.com/${REPOSITORY}/tarball/${REVISION}" --output - | tar xz -C content;'
             sh 'mv content/* source'
-        }
-
-        stage('build remediations') {
-            sh 'npm ci'
         }
 
         stage('build OpenSCAP') {
@@ -73,9 +59,9 @@ node ('openscap') {
             }
         }
 
-        stage('validate templates') {
+        /*stage('validate templates') {
             sh "node src/validateTemplate.js \$(find artifacts/playbooks/ -path '*/playbooks/*/*.yml')"
-        }
+        }*/
 
         stage('build Nginx configuration') {
             sh "echo 'location /playbooks { autoindex on; disable_symlinks on; add_header X-SSG-VERSION ${REVISION}; }' > artifacts/default.conf"
@@ -83,7 +69,7 @@ node ('openscap') {
 
         stage('build Nginx image') {
             sh 'ls -l artifacts/playbooks'
-            sh "oc start-build playbooks-ssg -n buildfactory --from-dir=artifacts --follow -w"
+            sh "oc start-build compliance-ssg -n buildfactory --from-dir=artifacts --follow -w"
         }
 
         openShiftUtils.withJnlpNode(image: "jenkins-deploy-jnlp:latest") {
@@ -96,13 +82,13 @@ node ('openscap') {
                 def dstTokenId = "quay-cloudservices-push-token"
                 // trim commit hash to 7 chars
                 def commitId = REVISION[0..6]
-                sh "oc tag playbooks-ssg:latest playbooks-ssg:${commitId} -n ${srcNamespace}"
+                sh "oc tag compliance-ssg:latest compliance-ssg:${commitId} -n ${srcNamespace}"
                 // TODO: when a stable branch exists, copy qa from that one instead of 'latest'
                 def tags = ["latest", commitId, "qa"]
                 tags.each { t ->
                     deployUtils.skopeoCopy(
-                        srcUri: srcBaseUri + "playbooks-ssg:${t}",
-                        dstUri: dstBaseUri + "playbooks-ssg:${t}",
+                        srcUri: srcBaseUri + "compliance-ssg:${t}",
+                        dstUri: dstBaseUri + "compliance-ssg:${t}",
                         srcUser: "na",
                         srcTokenId: srcTokenId,
                         dstUser: dstUser,
@@ -112,9 +98,9 @@ node ('openscap') {
 
             }
 
-            stage('import the qa image in the qa namespace') {
-                sh 'oc tag -n remediations-qa quay.io/cloudservices/playbooks-ssg:qa playbooks-ssg:qa'
-            }
+            /*stage('import the qa image in the qa namespace') {
+                sh 'oc tag -n remediations-qa quay.io/cloudservices/compliance-ssg:qa compliance-ssg:qa'
+            }*/
 
             notify("[${env.JOB_NAME.split('/')[-1]}] Built and promoted to stage", null, "good")
         }
