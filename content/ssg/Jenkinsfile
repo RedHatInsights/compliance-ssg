@@ -55,9 +55,9 @@ node ('openscap') {
         }
 
         stage('fetch content') {
-            sh 'mkdir content'
-            sh 'curl -s -L "https://github.com/${REPOSITORY}/tarball/${REVISION}" --output - | tar xz -C content;'
-            sh 'mv content/* source'
+            sh 'mkdir cac_content'
+            sh 'curl -s -L "https://github.com/${REPOSITORY}/tarball/${REVISION}" --output - | tar xz -C cac_content;'
+            sh 'mv cac_content/* source'
         }
 
         stage('build remediations') {
@@ -69,7 +69,7 @@ node ('openscap') {
             sh "echo ${REVISION} > artifacts/playbooks/revision.txt";
 
             dir('source') {
-                sh 'for i in rhel6 rhel7 rhel8; do ./build_product $i; mkdir ../artifacts/playbooks/$i; mv build/$i/playbooks ../artifacts/playbooks/$i; done'
+                sh 'for i in rhel7 rhel8; do ./build_product $i; mkdir ../artifacts/playbooks/$i; mv build/$i/playbooks ../artifacts/playbooks/$i; done'
             }
         }
 
