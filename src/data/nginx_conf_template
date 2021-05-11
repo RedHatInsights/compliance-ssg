@@ -1,0 +1,5 @@
+location /playbooks {
+    autoindex on;
+    disable_symlinks on;
+    add_header X-SSG-VERSION ##REVISION##;
+}
