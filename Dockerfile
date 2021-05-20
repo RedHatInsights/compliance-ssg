@@ -6,7 +6,7 @@ ARG RHEL_VERSIONS
 
 ENV REPOSITORY=${REPOSITORY:-ComplianceAsCode/content}
 ENV REVISION=${REVISION:-v0.1.53}
-ENV RHEL_VERSIONS=${RHEL_VERSIONS:-"rhel7 rhel8 rhel9"}
+ENV RHEL_VERSIONS=${RHEL_VERSIONS:-"rhel6 rhel7 rhel8"}
 ENV WORKDIR="/workdir"
 
 RUN microdnf update && microdnf install jq tar gzip make cmake python3 python3-pyyaml python3-jinja2 openscap-utils && microdnf clean all
