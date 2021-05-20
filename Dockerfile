@@ -15,7 +15,7 @@ WORKDIR $WORKDIR
 COPY src /compliance_ssg
 
 RUN /compliance_ssg/generate_playbooks.sh "$REPOSITORY" "$REVISION" "$RHEL_VERSIONS"
-RUN /compliance_ssg/generate_nginx_conf.sh /compliance_ssg/data/nginx_conf_template ${REVISION} > default.conf
+RUN /compliance_ssg/generate_nginx_conf.sh /compliance_ssg/data/nginx_conf_template "${REVISION}" > default.conf
 
 FROM registry.access.redhat.com/ubi8/nginx-118
 
