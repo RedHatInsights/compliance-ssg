@@ -1,4 +1,6 @@
-# compliance-ssg *NO LONGER USED, see https://gitlab.cee.redhat.com/insights-platform/compliance-ssg*
+# compliance-ssg
+
+*NO LONGER USED, see https://gitlab.cee.redhat.com/insights-platform/compliance-ssg*
 
 Image that builds and serves RHEL ssg playbooks from an NGINX HTTP server.
 
