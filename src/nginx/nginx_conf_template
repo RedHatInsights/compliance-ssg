@@ -1,3 +1,7 @@
+location / {
+  return 301 /playbooks;
+}
+
 location /playbooks {
     autoindex on;
     disable_symlinks on;
