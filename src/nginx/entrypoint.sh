@@ -2,24 +2,9 @@
 
 set -e
 
-source /compliance_ssg/clowder-config-common
+NGINX_PORT=${NGINX_PORT:-8080}
 
-if isClowderEnabled; then
+CFGFILE=$(mktemp)
 
-  echo "Reading Clowder config..."
-
-  NGINX_PORT=$(ClowderConfigWebPort)
-
-  if [ -z "$NGINX_PORT" ]; then
-    echo "WebPort not configured in Clowder!"
-    exit 1
-  else
-    echo "Updating port number to $NGINX_PORT according to configuration provided by Clowder"
-    PATCHED_NGINX_CONF_FILE=$(mktemp)
-    sed "/^\s\+listen/ s|[0-9]\+|${NGINX_PORT}|" "$NGINX_CONF_PATH" > "$PATCHED_NGINX_CONF_FILE"
-    cat "$PATCHED_NGINX_CONF_FILE"
-    nginx -c "$PATCHED_NGINX_CONF_FILE" -g "daemon off;"
-  fi
-else
-  nginx -g "daemon off;"
-fi
+sed "s/##PORT##/${NGINX_PORT}/" "/compliance_ssg/nginx_conf_template" | tee "$CFGFILE"
+exec nginx -c "$CFGFILE"

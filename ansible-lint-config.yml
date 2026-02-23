@@ -1,0 +1,9 @@
+# Required to avoid YAML formatting errors like lines length checks
+skip_list:
+  - formatting
+  - only-builtins-except-list
+
+# Required to properly identify the files as playbooks since we're not following the Ansible collection layout
+# https://ansible.readthedocs.io/projects/lint/usage/?h=linting+playbook#linting-playbooks-and-roles
+kinds:
+  - playbook: "**/*.{yml,yaml}"
