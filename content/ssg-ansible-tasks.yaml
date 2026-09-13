@@ -1,14 +1,14 @@
-revision: '2026-06-23'
+revision: '2026-09-13'
 supported:
   RHEL-8:
     - package: scap-security-guide-rule-playbooks-0.1.81
-      version: 0.1.81
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.81
+      version: 0.1.82
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
   RHEL-9:
     - package: scap-security-guide-rule-playbooks-0.1.81
-      version: 0.1.81
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.81
+      version: 0.1.82
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
   RHEL-10:
     - package: scap-security-guide-rule-playbooks-0.1.81
-      version: 0.1.81
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.81
+      version: 0.1.82
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
