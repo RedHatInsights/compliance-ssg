@@ -76,11 +76,13 @@ jobs:
           REVISION=$(date +%Y-%m-%d)
 
           # Update ssg-ansible-tasks.yaml
+          sed -i "s|package: scap-security-guide-rule-playbooks-0\.[0-9]\+\.[0-9]\+|package: scap-security-guide-rule-playbooks-${VERSION#v}|g" content/ssg-ansible-tasks.yaml
           sed -i "s|version: 0\.[0-9]\+\.[0-9]\+|version: ${VERSION#v}|g" content/ssg-ansible-tasks.yaml
           sed -i "s|/tarball/v[0-9.]\+|/tarball/$VERSION|g" content/ssg-ansible-tasks.yaml
           sed -i "s|revision: '.*'|revision: '$REVISION'|" content/ssg-ansible-tasks.yaml
 
           # Update ssg-datastreams.yaml
+          sed -i "s|package: scap-security-guide-0\.[0-9]\+\.[0-9]\+|package: scap-security-guide-${VERSION#v}|g" content/ssg-datastreams.yaml
           sed -i "s|version: 0\.[0-9]\+\.[0-9]\+|version: ${VERSION#v}|g" content/ssg-datastreams.yaml
           sed -i "s|/tarball/v[0-9.]\+|/tarball/$VERSION|g" content/ssg-datastreams.yaml
           sed -i "s|revision: '.*'|revision: '$REVISION'|" content/ssg-datastreams.yaml
