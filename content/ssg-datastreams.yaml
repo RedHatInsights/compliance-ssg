@@ -1,102 +1,102 @@
-revision: '2026-11-25'
+revision: '2026-11-28'
 supported:
   RHEL-8.0:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.1:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.2:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.3:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.4:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.5:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.6:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.7:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.8:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.9:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-8.10:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.0:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.1:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.2:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.3:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.4:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.5:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.6:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.7:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.8:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-9.9:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-10.0:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-10.1:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-10.2:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
   RHEL-10.3:
-    - package: scap-security-guide-0.1.82
-      version: 0.1.82
-      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.82
+    - package: scap-security-guide-0.1.83
+      version: 0.1.83
+      source_url: https://github.com/ComplianceAsCode/content/tarball/v0.1.83
